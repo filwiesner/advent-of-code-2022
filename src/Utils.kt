@@ -14,3 +14,5 @@ fun readInput(name: String) = File("src", "$name.txt")
 fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteArray()))
     .toString(16)
     .padStart(32, '0')
+
+operator fun IntRange.contains(other: IntRange): Boolean = other.first in this && other.last in this
