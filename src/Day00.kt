@@ -7,11 +7,11 @@ fun main() {
         return input.size
     }
 
-    val testInput = readInput("Day00_test")
+    val testInput = readInputLines("Day00_test")
     check(part1(testInput) == 0)
 //    check(part2(testInput) == 0)
 
-    val input = readInput("Day00")
+    val input = readInputLines("Day00")
     println(part1(input))
 //    println(part2(input))
 }
