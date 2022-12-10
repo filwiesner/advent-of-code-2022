@@ -1,6 +1,7 @@
 import java.io.File
 import java.math.BigInteger
 import java.security.MessageDigest
+import kotlin.math.hypot
 
 /**
  * Reads lines from the given input txt file.
@@ -33,3 +34,10 @@ fun String.columns(): Sequence<String> = sequence {
         yield(column)
     }
 }
+
+data class IntOffset(val x: Int, val y: Int)
+
+operator fun IntOffset.plus(offset: IntOffset) = IntOffset(x + offset.x, y + offset.y)
+operator fun IntOffset.minus(offset: IntOffset) = IntOffset(x - offset.x, y - offset.y)
+fun IntOffset.distanceTo(offset: IntOffset): Int =
+    hypot(offset.x - x.toFloat(), offset.y - y.toFloat()).toInt()
