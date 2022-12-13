@@ -1,12 +1,5 @@
 import kotlin.math.absoluteValue
 
-enum class Direction(val offset: IntOffset) {
-    Up(IntOffset(0, 1)),
-    Right(IntOffset(1, 0)),
-    Down(IntOffset(0, -1)),
-    Left(IntOffset(-1, 0)),
-}
-
 val String.asDirection get() = Direction.values().first { it.name.first().toString() == this }
 
 class Knot(
